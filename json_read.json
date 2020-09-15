@@ -1,0 +1,48 @@
+{
+	"name":"zhangsan",
+	"age":20,
+	"happy":true,
+	"persons":
+	[
+		"AAA",
+		"BBB",
+		"CCC"
+	],
+	"book":
+	[
+		"English",
+		60
+	],
+	"student":
+	{
+		"name":"Bob",
+		"ID":"123456",
+		"age":18
+	},
+	"array":
+	[
+		{
+			"weather": "hot"
+		},
+		{
+			"name":"bill",
+			"age":60
+		},
+		{
+			"num":2,
+			"points":
+			[
+				[1,2],
+				[3,4]
+			]
+		}
+	],
+	"array1":
+	{
+		"www":
+		{
+			"Test": "test"
+		}
+	}
+
+}
