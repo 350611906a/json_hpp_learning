@@ -178,3 +178,307 @@ Test: "test"
 
 ## 3、写文件的方法
 
+### 1、第一种格式
+
+写入如下格式的json文件：
+
+```json
+{
+    "answer": {
+        "everything": 42
+    },
+    "happy": true,
+    "list": [
+        1,
+        2,
+        3
+    ],
+    "name": "Niels",
+    "nothing": 0,
+    "object": {
+        "currency": "USD",
+        "value": 42.99
+    },
+    "pi": 3.14
+}
+```
+
+代码如下：
+
+```c++
+#include<iostream>
+#include<fstream>
+#include "json.hpp"
+#include<iomanip>
+
+using namespace std;
+using json=nlohmann::json;
+
+int main()
+{
+	json js;
+	js["answer"]["everything"] = 42;
+	js["happy"] = true;
+	js["list"] = {1, 2, 3};
+	js["name"] = "Niels";
+	js["nothing"] = NULL;
+	js["object"]["currency"] = "USD";
+	js["object"]["value"] = 42.99;
+	js["pi"] = 3.14;
+	
+	ofstream out("write_1.json");
+	if(!out.is_open())
+	{
+		cout<<"open write file failed"<<endl;
+		return -1;
+	}
+	
+	out<<setw(4)<<js;
+	out.close();
+	
+	return 0;	
+}
+```
+
+保存如下：
+
+```json
+root@ubuntu:/code/json# cat write_1.json 
+{
+    "answer": {
+        "everything": 42
+    },
+    "happy": true,
+    "list": [
+        1,
+        2,
+        3
+    ],
+    "name": "Niels",
+    "nothing": 0,
+    "object": {
+        "currency": "USD",
+        "value": 42.99
+    },
+    "pi": 3.14
+}
+```
+
+
+
+### 2、第二种格式
+
+写入如下json格式的文件：
+
+```json
+{
+    "devices": [
+        {
+            "appVerifiCode": "",
+            "appVersion": "",
+            "bindInfo": "1234567890",
+            "bsn": "",
+            "checkVersion": "V2.0005.0870737.0.R",
+            "macAddress": "",
+            "sn": "snsnsnsnsnns",
+            "versionList": [
+                {
+                    "keyId": "1111111111",
+                    "version": "1554"
+                }
+            ]
+        }
+    ]
+}
+```
+
+代码如下：
+
+```c++
+#include<iostream>
+#include<fstream>
+#include "json.hpp"
+#include<iomanip>
+
+using namespace std;
+using json=nlohmann::json;
+
+int main()
+{
+	json js;
+	js["devices"][0]["appVerifiCode"] = "";
+	js["devices"][0]["appVersion"] = "";
+	js["devices"][0]["bindInfo"] = "1234567890";
+	js["devices"][0]["bsn"] = "";
+	js["devices"][0]["checkVersion"] = "V2.0005.0870737.0.R";
+	js["devices"][0]["macAddress"] = "";
+	js["devices"][0]["sn"] = "snsnsnsnsnns";
+	js["devices"][0]["versionList"][0] = {{"keyId", "1111111111"}, {"version", "1554"}};
+	
+	ofstream out("write_2.json");
+	if(!out.is_open())
+	{
+		cout<<"open write file failed"<<endl;
+		return -1;
+	}
+	
+	out<<setw(4)<<js;
+	
+	return 0;
+}
+```
+
+保存的文件结果：
+
+```json
+root@ubuntu:/code/json# cat write_2.json 
+{
+    "devices": [
+        {
+            "appVerifiCode": "",
+            "appVersion": "",
+            "bindInfo": "1234567890",
+            "bsn": "",
+            "checkVersion": "V2.0005.0870737.0.R",
+            "macAddress": "",
+            "sn": "snsnsnsnsnns",
+            "versionList": [
+                {
+                    "keyId": "1111111111",
+                    "version": "1554"
+                }
+            ]
+        }
+    ]
+}
+```
+
+
+
+### 3、第三种方法
+
+写入如下文件：
+
+```json
+{
+    "detect_area": {
+        "point_num": 4,
+        "points": [
+            [
+                1,
+                1
+            ],
+            [
+                1023,
+                1
+            ],
+            [
+                1023,
+                1023
+            ],
+            [
+                1,
+                1023
+            ]
+        ]
+    },
+    "fps": 12,
+    "pic_info": {
+        "height": 480,
+        "width": 640
+    },
+    "sensith": 90,
+    "video_file": {
+        "video_name": [
+            "640_480.yuv",
+            "a.yuv",
+            "b.yuv"
+        ],
+        "video_num": 3
+    }
+}
+```
+
+代码如下：
+
+```c++
+#include<iostream>
+#include<fstream>
+#include "json.hpp"
+#include<iomanip>
+
+using namespace std;
+using json=nlohmann::json;
+
+int main()
+{
+	json js;
+	js["detect_area"]["point_num"] = 4;
+	js["detect_area"]["points"][0] = {1, 1};
+	js["detect_area"]["points"][1] = {1023, 1};
+	js["detect_area"]["points"][2] = {1023, 1023};
+	js["detect_area"]["points"][3] = {1, 1023};
+	js["fps"] = 12;
+	js["pic_info"]["height"] = 480;
+	js["pic_info"]["width"] = 640;
+	js["sensith"] = 90;
+	js["video_file"]["video_num"] = 3;
+	js["video_file"]["video_name"] = {"640_480.yuv", "a.yuv", "b.yuv"};
+	
+	
+	ofstream out("write_3.json");
+	if(!out.is_open())
+	{
+		cout<<"open write file failed"<<endl;
+		return -1;
+	}
+	
+	out<<setw(4)<<js;
+	
+	return 0;
+}
+```
+
+文件保存如下：
+
+```json
+root@ubuntu:/code/json# cat write_3.json 
+{
+    "detect_area": {
+        "point_num": 4,
+        "points": [
+            [
+                1,
+                1
+            ],
+            [
+                1023,
+                1
+            ],
+            [
+                1023,
+                1023
+            ],
+            [
+                1,
+                1023
+            ]
+        ]
+    },
+    "fps": 12,
+    "pic_info": {
+        "height": 480,
+        "width": 640
+    },
+    "sensith": 90,
+    "video_file": {
+        "video_name": [
+            "640_480.yuv",
+            "a.yuv",
+            "b.yuv"
+        ],
+        "video_num": 3
+    }
+}
+```
+

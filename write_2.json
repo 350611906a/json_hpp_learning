@@ -1,0 +1,19 @@
+{
+    "devices": [
+        {
+            "appVerifiCode": "",
+            "appVersion": "",
+            "bindInfo": "1234567890",
+            "bsn": "",
+            "checkVersion": "V2.0005.0870737.0.R",
+            "macAddress": "",
+            "sn": "snsnsnsnsnns",
+            "versionList": [
+                {
+                    "keyId": "1111111111",
+                    "version": "1554"
+                }
+            ]
+        }
+    ]
+}

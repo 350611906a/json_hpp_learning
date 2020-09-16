@@ -1,0 +1,37 @@
+{
+    "detect_area": {
+        "point_num": 4,
+        "points": [
+            [
+                1,
+                1
+            ],
+            [
+                1023,
+                1
+            ],
+            [
+                1023,
+                1023
+            ],
+            [
+                1,
+                1023
+            ]
+        ]
+    },
+    "fps": 12,
+    "pic_info": {
+        "height": 480,
+        "width": 640
+    },
+    "sensith": 90,
+    "video_file": {
+        "video_name": [
+            "640_480.yuv",
+            "a.yuv",
+            "b.yuv"
+        ],
+        "video_num": 3
+    }
+}

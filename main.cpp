@@ -9,6 +9,79 @@ using json=nlohmann::json;
 int main()
 {
 	json js;
+	js["detect_area"]["point_num"] = 4;
+	js["detect_area"]["points"][0] = {1, 1};
+	js["detect_area"]["points"][1] = {1023, 1};
+	js["detect_area"]["points"][2] = {1023, 1023};
+	js["detect_area"]["points"][3] = {1, 1023};
+	js["fps"] = 12;
+	js["pic_info"]["height"] = 480;
+	js["pic_info"]["width"] = 640;
+	js["sensith"] = 90;
+	js["video_file"]["video_num"] = 3;
+	js["video_file"]["video_name"] = {"640_480.yuv", "a.yuv", "b.yuv"};
+	
+	
+	ofstream out("write_3.json");
+	if(!out.is_open())
+	{
+		cout<<"open write file failed"<<endl;
+		return -1;
+	}
+	
+	out<<setw(4)<<js;
+	
+	return 0;
+}
+/*
+	json js;
+	js["devices"][0]["appVerifiCode"] = "";
+	js["devices"][0]["appVersion"] = "";
+	js["devices"][0]["bindInfo"] = "1234567890";
+	js["devices"][0]["bsn"] = "";
+	js["devices"][0]["checkVersion"] = "V2.0005.0870737.0.R";
+	js["devices"][0]["macAddress"] = "";
+	js["devices"][0]["sn"] = "snsnsnsnsnns";
+	js["devices"][0]["versionList"][0] = {{"keyId", "1111111111"}, {"version", "1554"}};
+	
+	ofstream out("write_2.json");
+	if(!out.is_open())
+	{
+		cout<<"open write file failed"<<endl;
+		return -1;
+	}
+	
+	out<<setw(4)<<js;
+	
+	return 0;
+}
+
+/*
+	json js;
+	js["answer"]["everything"] = 42;
+	js["happy"] = true;
+	js["list"] = {1, 2, 3};
+	js["name"] = "Niels";
+	js["nothing"] = NULL;
+	js["object"]["currency"] = "USD";
+	js["object"]["value"] = 42.99;
+	js["pi"] = 3.14;
+	
+	ofstream out("write_1.json");
+	if(!out.is_open())
+	{
+		cout<<"open write file failed"<<endl;
+		return -1;
+	}
+	
+	out<<setw(4)<<js;
+	out.close();
+	
+	return 0;	
+}
+
+/*
+	json js;
 	ifstream ifs("./json_read.json");
 	if(!ifs.is_open())
 	{
@@ -57,3 +130,5 @@ int main()
 	
 	return 0;
 }
+
+*/
