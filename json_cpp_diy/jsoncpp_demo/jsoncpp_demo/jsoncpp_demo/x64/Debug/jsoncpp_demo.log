@@ -1,0 +1,15 @@
+﻿生成启动时间为 2022/12/19 17:32:12。
+     1>项目“E:\work_dilusense\WUQI\sent_img_tools\json_dabing_new\jsoncpp_demo\jsoncpp_demo\jsoncpp_demo\jsoncpp_demo.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         E:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt jsoncpp_demo.cpp
+         jsoncpp_demo.cpp
+     1>e:\work_dilusense\wuqi\sent_img_tools\json_dabing_new\jsoncpp_demo\jsoncpp_demo\jsoncpp_demo\jsoncpp_demo.cpp(69): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\work_dilusense\wuqi\sent_img_tools\json_dabing_new\jsoncpp_demo\jsoncpp_demo\jsoncpp_demo\jsoncpp_demo.cpp(92): warning C4018: “<”: 有符号/无符号不匹配
+       Link:
+         E:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\work_dilusense\WUQI\sent_img_tools\json_dabing_new\jsoncpp_demo\jsoncpp_demo\x64\Debug\jsoncpp_demo.exe" /INCREMENTAL /NOLOGO jsoncpp.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"E:\work_dilusense\WUQI\sent_img_tools\json_dabing_new\jsoncpp_demo\jsoncpp_demo\x64\Debug\jsoncpp_demo.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\work_dilusense\WUQI\sent_img_tools\json_dabing_new\jsoncpp_demo\jsoncpp_demo\x64\Debug\jsoncpp_demo.lib" /MACHINE:X64 x64\Debug\jsoncpp_demo.obj
+         jsoncpp_demo.vcxproj -> E:\work_dilusense\WUQI\sent_img_tools\json_dabing_new\jsoncpp_demo\jsoncpp_demo\x64\Debug\jsoncpp_demo.exe
+     1>已完成生成项目“E:\work_dilusense\WUQI\sent_img_tools\json_dabing_new\jsoncpp_demo\jsoncpp_demo\jsoncpp_demo\jsoncpp_demo.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:01.70
